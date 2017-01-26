@@ -34,7 +34,8 @@ app.use(express.static('public'))
 // app.use(express.static(path.join(__dirname + '/Scripts')));
 // //Store all JS and CSS in Scripts folder.
 
-app.use('/', require('./routes/index'));
+//app.use('/', require('./routes/index'));
+app.use('/', require('./routes/books'));
 app.use('/projectName', require('./routes/rootRoute'));
 
 // app.get('/books',function(req,res){

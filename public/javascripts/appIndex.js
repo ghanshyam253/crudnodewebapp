@@ -4,10 +4,23 @@ app.controller('booksCtrl', function($scope, $http) {
 $scope.data=[];
     var baseUrl=window.location.origin+ "/projectName/";
     
+function deleteUndefiendKey(object) {
+  for(var property in object) {
+    if(!object[property]) {
+      delete object[property];
+    } else {
+      if(object[property] && typeof object[property] == 'object'){
+        deleteKey(object[property]);
+      }
+    }
+  }
+  return object;
+}    
 
     $scope.addBookDetails= function(){
         console.log("inside addBookDetails");
         var outputData=$scope.book;
+        outputData = deleteUndefiendKey(outputData);
         var webUrl=baseUrl+"books/addBook";
     $http.post(webUrl,outputData)
       .then(function(response) {

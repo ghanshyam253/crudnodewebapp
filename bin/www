@@ -16,6 +16,7 @@ var port = normalizePort(process.env.PORT || '3000');
 console.log("App is  running on "+port +" port ! :)");
 console.log("https://crudnodewebapp2.herokuapp.com/projectName/books/loadbooks");
 console.log("localhost:3000/projectName/books/loadbooks");
+console.log("http://localhost:3000/");
 
 app.set('port', port);
 

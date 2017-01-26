@@ -4,14 +4,16 @@ var router = express.Router();
 var path    = require("path");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-     models.bookModel.find({},function(err,result)
-   {
-       if(err) throw err;
-       result.message="success";
-       result.modelName="bookModel";
-       res.json(result);
-//        res.send("<a href='/users'>Show Users</a>");
-   });
+//      models.bookModel.find({},function(err,result)
+//    {
+//        if(err) throw err;
+//        result.message="success";
+//        result.modelName="bookModel";
+//        res.json(result);
+// //        res.send("<a href='/users'>Show Users</a>");
+//    });
+    res.sendFile(path.join(__dirname+'./../public/html/appIndex.html'));
+
 });
 
 router.get('/getBooks', function(req, res, next) {

@@ -34,7 +34,7 @@ var mongoose = require('mongoose');
 var dbHost = 'mongodb://127.0.0.1:27017/meandb'; 
 var dbHost = "mongodb://<ghanshyam253>:<ghanshyam253>@ds011158.mlab.com:11158/meanmlabdb";
 var dbHost = 'mongodb://127.0.0.1:27017/meandb'; 
-var dbHost = "mongodb://ghanshyam253:ghanshyam253@ds011158.mlab.com:11158/meanmlabdb";
+//var dbHost = "mongodb://ghanshyam253:ghanshyam253@ds011158.mlab.com:11158/meanmlabdb";
 // connecting to Mongo DB
 mongoose.connect(dbHost);
 
