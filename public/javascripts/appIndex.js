@@ -2,7 +2,7 @@ var app = angular.module('booksInventoryApp', []);
 
 app.controller('booksCtrl', function($scope, $http) {
 $scope.data=[];
-    var baseUrl="https://crudnodewebapp2.herokuapp.com/projectName/";
+    var baseUrl=window.location.hostname+ "/projectName/";
     
 
     $scope.addBookDetails= function(){
