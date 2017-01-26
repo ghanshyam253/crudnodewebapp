@@ -2,7 +2,7 @@ var app = angular.module('booksInventoryApp', []);
 
 app.controller('booksCtrl', function($scope, $http) {
 $scope.data=[];
-    var baseUrl=window.location.hostname+ "/projectName/";
+    var baseUrl=window.location.origin+ "/projectName/";
     
 
     $scope.addBookDetails= function(){
