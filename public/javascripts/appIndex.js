@@ -21,7 +21,7 @@ $scope.data=[];
         console.log("inside editBookDetails");
         console.log($scope.book);
         var outputData=$scope.book;
-        var webUrl="http://ngd11369:3000/projectName/books/updateBook/"+$scope.book.isbn;
+        var webUrl=baseUrl+"books/updateBook/"+$scope.book.isbn;
         $http.put(webUrl,outputData)
       .then(function(response) {
           console.log(response);
@@ -45,7 +45,8 @@ $scope.data=[];
     };
     $scope.getBookDetails= function(){
         console.log("inside getBookDetails : "+$scope.book.isbn);
-          var webUrl="http://ngd11369:3000/projectName/books/getBooks/"+$scope.book.isbn;
+//          var webUrl="http://ngd11369:3000/projectName/books/getBooks/"+$scope.book.isbn;
+        var webUrl=baseUrl+"books/getBooks/"+$scope.book.isbn;
         $http.get(webUrl)
           .then(function(response) {
                console.log(response);
@@ -62,7 +63,8 @@ $scope.data=[];
       console.log(book);
       console.log(index);
               console.log("inside fetchAllBookDetails");
-              var webUrl="http://ngd11369:3000/projectName/books/deleteBookDetail/"+book.isbn;
+//              var webUrl="http://ngd11369:3000/projectName/books/deleteBookDetail/"+book.isbn;
+        var webUrl=baseUrl+"books/deleteBookDetail/"+book.isbn;
         $http.delete(webUrl)
           .then(function(response) {
                console.log(response);
