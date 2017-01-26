@@ -32,9 +32,30 @@ var mongoose = require('mongoose');
 
 
 var dbHost = 'mongodb://127.0.0.1:27017/meandb'; 
-
+var dbHost = "mongodb://<ghanshyam253>:<ghanshyam253>@ds011158.mlab.com:11158/meanmlabdb";
+var dbHost = 'mongodb://127.0.0.1:27017/meandb'; 
+var dbHost = "mongodb://ghanshyam253:ghanshyam253@ds011158.mlab.com:11158/meanmlabdb";
 // connecting to Mongo DB
 mongoose.connect(dbHost);
+
+// CONNECTION EVENTS
+// When successfully connected
+mongoose.connection.on('connected', function () {  
+
+  console.log('Mongoose default connection open to ');
+}); 
+
+// If the connection throws an error
+mongoose.connection.on('error',function (err) {  
+  console.log('Mongoose default connection error: ' + err);
+}); 
+
+// When the connection is disconnected
+mongoose.connection.on('disconnected', function () {  
+    console.log(arguments);
+  console.log('Mongoose default connection disconnected'); 
+});
+
 //mongoose.createCollection("log", { capped : true, size : 5242880, max : 5000 } )
 // Create a book schema
 var bookSchema = mongoose.Schema({
