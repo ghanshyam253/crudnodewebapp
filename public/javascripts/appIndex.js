@@ -2,12 +2,14 @@ var app = angular.module('booksInventoryApp', []);
 
 app.controller('booksCtrl', function($scope, $http) {
 $scope.data=[];
-
+    var baseUrl="https://crudnodewebapp2.herokuapp.com/projectName/";
+    
 
     $scope.addBookDetails= function(){
         console.log("inside addBookDetails");
         var outputData=$scope.book;
-    $http.post("http://ngd11369:3000/projectName/books/addBook",outputData)
+        var webUrl=baseUrl+"books/addBook";
+    $http.post(webUrl,outputData)
       .then(function(response) {
           console.log(response);
           $scope.fetchAllBookDetails();
@@ -31,7 +33,8 @@ $scope.data=[];
     };
     $scope.fetchAllBookDetails= function(){
         console.log("inside fetchAllBookDetails");
-        $http.get("http://ngd11369:3000/projectName/books/getBooks")
+        var webUrl=baseUrl+"books/getBooks";
+        $http.get(webUrl)
           .then(function(response) {
                console.log(response);
             $scope.data = response.data;
